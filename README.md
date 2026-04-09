@@ -50,7 +50,7 @@ Context █░░░░░ 18% │ Usage ░░░░░░ 3% (1h 26m) | Weekly
 
 #### Step 1 — Install claude-hud
 
-In Claude Code:
+Follow the [claude-hud installation guide](https://github.com/jarrodwatts/claude-hud#installation) to install and configure the plugin. Typically:
 
 ```
 /install-plugin jarrodwatts/claude-hud
@@ -77,7 +77,7 @@ The installer will:
 
 #### 1. Install claude-hud
 
-In Claude Code:
+Follow the [claude-hud installation guide](https://github.com/jarrodwatts/claude-hud#installation) to install and configure the plugin. Typically:
 
 ```
 /install-plugin jarrodwatts/claude-hud
