@@ -1,0 +1,21 @@
+{
+  "name": "glm-claude-hub",
+  "version": "1.0.0",
+  "description": "Display GLM (Zhipu AI) model usage quota in Claude Code statusline via claude-hud",
+  "scripts": {
+    "install:wrapper": "bash install.sh"
+  },
+  "keywords": [
+    "claude-code",
+    "claude-hud",
+    "glm",
+    "zhipu",
+    "statusline",
+    "usage-monitor"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
