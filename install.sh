@@ -19,6 +19,16 @@ if ! command -v bun &>/dev/null; then
   exit 1
 fi
 
+HUD_PLUGIN_DIR="$HOME/.claude/plugins/cache/claude-hud/claude-hud"
+if [ ! -d "$HUD_PLUGIN_DIR" ]; then
+  echo "Error: claude-hud plugin not found."
+  echo "Please install it first in Claude Code:"
+  echo "  /install-plugin jarrodwatts/claude-hud"
+  echo ""
+  echo "Then re-run this installer."
+  exit 1
+fi
+
 # ── 1. Copy wrapper script ───────────────────────────────────────────
 mkdir -p "$(dirname "$WRAPPER_DEST")"
 cp "$WRAPPER_SRC" "$WRAPPER_DEST"
@@ -114,10 +124,4 @@ fi
 
 # ── Summary ──────────────────────────────────────────────────────────
 echo ""
-echo "==> Installation complete!"
-echo ""
-echo "Required manual step:"
-echo "  Install claude-hud in Claude Code:"
-echo "    /install-plugin jarrodwatts/claude-hud"
-echo ""
-echo "Then restart Claude Code."
+echo "==> Installation complete! Restart Claude Code to apply."

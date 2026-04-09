@@ -48,6 +48,16 @@ Context █░░░░░ 18% │ Usage ░░░░░░ 3% (1h 26m) | Weekly
 
 ### Quick Install
 
+#### Step 1 — Install claude-hud
+
+In Claude Code:
+
+```
+/install-plugin jarrodwatts/claude-hud
+```
+
+#### Step 2 — Add GLM configuration
+
 ```bash
 git clone https://github.com/hxuaj/glm-claude-hub.git
 cd glm-claude-hub
@@ -61,13 +71,7 @@ The installer will:
 3. Configure claude-hud plugin (`sevenDayThreshold: 0`, usage bar, etc.)
 4. Prompt for your Zhipu AI API key
 
-After the installer finishes, install the claude-hud plugin in Claude Code:
-
-```
-/install-plugin jarrodwatts/claude-hud
-```
-
-Then restart Claude Code.
+#### Step 3 — Restart Claude Code
 
 ### Manual Installation
 
@@ -79,44 +83,7 @@ In Claude Code:
 /install-plugin jarrodwatts/claude-hud
 ```
 
-#### 2. Copy the wrapper script
-
-```bash
-mkdir -p ~/.claude/scripts
-cp scripts/glm-wrapper.ts ~/.claude/scripts/glm-wrapper.ts
-```
-
-#### 3. Configure environment variables
-
-Edit `~/.claude/settings.json`:
-
-```json
-{
-  "env": {
-    "ANTHROPIC_AUTH_TOKEN": "<your-zhipu-api-key>",
-    "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
-    "ANTHROPIC_MODEL": "glm-5.1",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-5.1",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5.1",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-5"
-  }
-}
-```
-
-#### 4. Set statusline command
-
-In `~/.claude/settings.json`:
-
-```json
-{
-  "statusLine": {
-    "command": "bash -c 'exec \"$HOME/.bun/bin/bun\" --env-file /dev/null \"$HOME/.claude/scripts/glm-wrapper.ts\"'",
-    "type": "command"
-  }
-}
-```
-
-#### 5. Configure claude-hud plugin
+#### 2. Configure claude-hud plugin
 
 Edit `~/.claude/plugins/claude-hud/config.json`:
 
@@ -140,9 +107,44 @@ Edit `~/.claude/plugins/claude-hud/config.json`:
 | `showAgents` | Show sub-agent info |
 | `showTodos` | Show todo list |
 
-#### 6. Restart Claude Code
+#### 3. Add GLM wrapper
 
-Exit and restart Claude Code to see the statusline in action.
+```bash
+mkdir -p ~/.claude/scripts
+cp scripts/glm-wrapper.ts ~/.claude/scripts/glm-wrapper.ts
+```
+
+#### 4. Configure environment variables
+
+Edit `~/.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "<your-zhipu-api-key>",
+    "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+    "ANTHROPIC_MODEL": "glm-5.1",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-5.1",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5.1",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-5"
+  }
+}
+```
+
+#### 5. Set statusline command
+
+In `~/.claude/settings.json`:
+
+```json
+{
+  "statusLine": {
+    "command": "bash -c 'exec \"$HOME/.bun/bin/bun\" --env-file /dev/null \"$HOME/.claude/scripts/glm-wrapper.ts\"'",
+    "type": "command"
+  }
+}
+```
+
+#### 6. Restart Claude Code
 
 ## Troubleshooting
 
